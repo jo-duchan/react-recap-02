@@ -7,7 +7,7 @@ function UsersList({ users }) {
     <Card className={classes.users}>
       <ul>
         {users.map((user) => (
-          <li>
+          <li key={user.id}>
             {user.name} ({user.age} years old)
           </li>
         ))}
