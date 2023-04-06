@@ -3,10 +3,10 @@ import Card from "components/UI/Card";
 import Button from "components/UI/Button";
 import classes from "components/UI/ErrorModal.module.css";
 
-function ErrorModal({ title, message }) {
+function ErrorModal({ title, message, onConfirm }) {
   return (
     <div>
-      <div className={classes.backdrop} />
+      <div className={classes.backdrop} onClick={onConfirm} />
       <Card className={classes.modal}>
         <header className={classes.header}>
           <h2>{title}</h2>
@@ -15,7 +15,7 @@ function ErrorModal({ title, message }) {
           <p>{message}</p>
         </div>
         <footer className={classes.actions}>
-          <Button>Okay</Button>
+          <Button onClick={onConfirm}>Okay</Button>
         </footer>
       </Card>
     </div>
