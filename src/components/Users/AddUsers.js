@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Wrapper from "components/Helpers/Wrapper";
 import Card from "components/UI/Card";
 import Button from "components/UI/Button";
 import ErrorModal from "components/UI/ErrorModal";
@@ -41,7 +42,7 @@ function AddUser({ onAddUser }) {
   const errorHandler = () => setError(null);
 
   return (
-    <div>
+    <Wrapper>
       {error && (
         <ErrorModal
           title={error.title}
@@ -68,7 +69,7 @@ function AddUser({ onAddUser }) {
           <Button type="submit">Add Users</Button>
         </form>
       </Card>
-    </div>
+    </Wrapper>
   );
 }
 
